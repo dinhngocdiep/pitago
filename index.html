@@ -1,11 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+  <title>Pitago</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
 <body>
 
 <h2>Tính thần số học</h2>
-<div style="display: flex; flex-direction: row;padding: 3px;">
-<input id="input-value" type="text" style="width:300px;height: 30px;font-size: 18px;" onkeyup="enterOnInput(event)" />
-<button onclick="calcValue()" style="margin-left: 10px;">Tính</button>
+<div style="display: flex; flex-direction: row;padding: 3px;width:100%" class="container">
+<div class="form-group" style="width:100%">
+<input class="form-control" id="input-value" type="text" style="height: 45px;font-size: 20px;" onkeyup="enterOnInput(event)" />
+<button class="btn btn-primary btn-lg" onclick="calcValue()" style="margin-left: 10px;margin-top:15px">Tính</button>
+ </div>
 </div>
 <div style="display: flex;flex-direction: row;padding: 3px;height: 30px;font-size: 18px;">
     <span>Số pitago:</span>
