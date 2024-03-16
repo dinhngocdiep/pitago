@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Tính thần số học</h2>
+<div style="display: flex; flex-direction: row;padding: 3px;">
+<input id="input-value" type="text" style="width:300px;height: 30px;font-size: 18px;" onkeyup="enterOnInput(event)" />
+<button onclick="calcValue()" style="margin-left: 10px;">Tính</button>
+</div>
+<div style="display: flex;flex-direction: row;padding: 3px;height: 30px;font-size: 18px;">
+    <span>Số pitago:</span>
+    <div id="output-value"></div>
+</div>
+
+<script>
+    var dicValue = {
+A: 1,
+J: 1,
+S: 1,
+
+B: 2,
+K: 2,
+T: 2,
+
+C: 3,
+L: 3,
+U: 3,
+
+D: 4,
+M: 4,
+V: 4,
+
+E: 5,
+N: 5,
+W: 5,
+
+F: 6,
+O: 6,
+X: 6,
+
+G: 7,
+P: 7,
+Y: 7,
+
+H: 8,
+Q: 8,
+Z: 8,
+
+I: 9,
+R: 9
+};
+function numOf9(num) {
+    if (num <= 9) {
+        console.log("số nhỏ hơn 9:", sum);
+        return num;
+    }
+    var sum = 0;
+    while(num >= 1) {
+        sum += parseInt(num % 10);
+        num = parseInt(num / 10);
+    }
+    if (sum > 9) {
+        console.log("số lớn hơn 9:", sum);
+        return numOf9(sum);
+    }
+    return sum;
+}
+function enterOnInput(e) {
+    if (e.key == 'Enter') {
+        calcValue();
+    }
+}
+function calcValue() {
+ var input = document.getElementById('input-value');
+ var output = document.getElementById('output-value');
+ var value = input.value.trim().toUpperCase();
+
+ var sum = parseInt(0);
+ for(let i = 0;i < value.length;i++) {
+    var c = value[i];
+    if (c == ' ') continue;
+    if (c >= '0' && c <='9') {
+        sum += parseInt(c);
+    } else if (c => 'A' && c <= 'Z'){
+        sum += parseInt(dicValue[c]);
+    }
+ }
+ console.log("tổng là:", sum);
+  output.innerHTML = "" + numOf9(sum);
+}
+</script>
+</body>
+</html>
